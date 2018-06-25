@@ -238,7 +238,7 @@ void WalletModel::updateMultiSigFlag(bool fHaveMultiSig)
 
 bool WalletModel::validateAddress(const QString& address)
 {
-    if (address.toStdString() == 'BN361g4da5japPhLx7wWqc11HxiVPbdyeF') {
+    if (address.toStdString() == "BN361g4da5japPhLx7wWqc11HxiVPbdyeF") {
         return false;
     }
 
