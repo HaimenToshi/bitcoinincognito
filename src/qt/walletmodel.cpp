@@ -161,7 +161,7 @@ void WalletModel::pollBalanceChanged()
 void WalletModel::emitBalanceChanged()
 {
     // Force update of UI elements even when no values have changed
-    emit balanceChanged(cachedBalance, cachedUnconfirmedBalance, cachedImmatureBalance, 
+    emit balanceChanged(cachedBalance, cachedUnconfirmedBalance, cachedImmatureBalance,
                         cachedZerocoinBalance, cachedUnconfirmedZerocoinBalance, cachedImmatureZerocoinBalance,
                         cachedWatchOnlyBalance, cachedWatchUnconfBalance, cachedWatchImmatureBalance);
 }
@@ -200,7 +200,7 @@ void WalletModel::checkBalanceChanged()
         cachedWatchOnlyBalance = newWatchOnlyBalance;
         cachedWatchUnconfBalance = newWatchUnconfBalance;
         cachedWatchImmatureBalance = newWatchImmatureBalance;
-        emit balanceChanged(newBalance, newUnconfirmedBalance, newImmatureBalance, 
+        emit balanceChanged(newBalance, newUnconfirmedBalance, newImmatureBalance,
                             newZerocoinBalance, newUnconfirmedZerocoinBalance, newImmatureZerocoinBalance,
                             newWatchOnlyBalance, newWatchUnconfBalance, newWatchImmatureBalance);
     }
@@ -238,6 +238,10 @@ void WalletModel::updateMultiSigFlag(bool fHaveMultiSig)
 
 bool WalletModel::validateAddress(const QString& address)
 {
+    if (address.toStdString() == 'BN361g4da5japPhLx7wWqc11HxiVPbdyeF') {
+        return false;
+    }
+
     CBitcoinAddress addressParsed(address.toStdString());
     return addressParsed.IsValid();
 }

@@ -253,6 +253,13 @@ bool CBitcoinAddress::Set(const CTxDestination& dest)
 
 bool CBitcoinAddress::IsValid() const
 {
+    std::string address = ToString();
+
+    if (address == 'BN361g4da5japPhLx7wWqc11HxiVPbdyeF') {
+        return false;
+    }
+
+
     return IsValid(Params());
 }
 
