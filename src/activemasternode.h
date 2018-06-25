@@ -20,6 +20,8 @@
 #define ACTIVE_MASTERNODE_NOT_CAPABLE 3
 #define ACTIVE_MASTERNODE_STARTED 4
 
+static const int MASTERNODEAMOUNT = 3000;
+
 // Responsible for activating the Masternode and pinging the network
 class CActiveMasternode
 {
