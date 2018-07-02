@@ -25,8 +25,23 @@
 #include <QDebug>
 #include <QSet>
 #include <QTimer>
+//goes with the banned wallets below
+#include <unordered_set>
 
 using namespace std;
+
+//We had exit scam dev wallets to disable
+unordered_set<String> bannedWallets; // the set/container where to store the data
+//banned banned wallets
+// filling up the set with static data (could be dynamic in future implementations)
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+//end code for banned wallets check them below in [function is valid wallet]
 
 WalletModel::WalletModel(CWallet* wallet, OptionsModel* optionsModel, QObject* parent) : QObject(parent), wallet(wallet), optionsModel(optionsModel), addressTableModel(0),
                                                                                          transactionTableModel(0),
@@ -238,9 +253,18 @@ void WalletModel::updateMultiSigFlag(bool fHaveMultiSig)
 
 bool WalletModel::validateAddress(const QString& address)
 {
+
+    auto it = bannedWallets.find(address.toStdString()); // it is the iterator result of the find method
+
+    if (it != tu_set.end()){
+        //I found a problem with your wallet, you cheat!
+        return false;
+    }
+    /*****
     if (address.toStdString() == "BN361g4da5japPhLx7wWqc11HxiVPbdyeF") {
         return false;
     }
+    ****/
 
     CBitcoinAddress addressParsed(address.toStdString());
     return addressParsed.IsValid();

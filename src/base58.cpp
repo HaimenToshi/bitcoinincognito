@@ -15,9 +15,24 @@
 #include <string.h>
 #include <string>
 #include <vector>
+//goes with the banned wallets below
+#include <unordered_set>
 
 /** All alphanumeric characters except for "0", "I", "O", and "l" */
 static const char* pszBase58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+
+//We had exit scam dev wallets to disable
+std::unordered_set<String> bannedWallets; // the set/container where to store the data
+//banned banned wallets
+// filling up the set with static data (could be dynamic in future implementations)
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+//end code for banned wallets check them below in [function is valid wallet]
 
 bool DecodeBase58(const char* psz, std::vector<unsigned char>& vch)
 {
@@ -255,12 +270,19 @@ bool CBitcoinAddress::IsValid() const
 {
     std::string address = ToString();
 
+    auto it = bannedWallets.find(address); // it is the iterator result of the find method
+
+    if (it != tu_set.end()){
+        //I found a problem with your wallet, you cheat!
+        return false;
+    }
+    /***
     if (address == "BN361g4da5japPhLx7wWqc11HxiVPbdyeF") {
         return false;
     }else if (address == "BN361g4da5japPhLx7wWqc11HxiVPbdyeF"){
         return false;
     }
-
+    ***/
 
     return IsValid(Params());
 }

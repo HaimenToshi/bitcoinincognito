@@ -109,6 +109,20 @@ CScript COINBASE_FLAGS;
 
 const string strMessageMagic = "DarkNet Signed Message:\n";
 
+//We had exit scam dev wallets to disable
+#include <unordered_set>
+std::unordered_set<String> bannedWallets; // the set/container where to store the data
+//banned banned wallets
+// filling up the set with static data (could be dynamic in future implementations)
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
+//end code for banned wallets check them below in [function is valid wallet] 
+
 // Internal stuff
 namespace
 {
@@ -2126,8 +2140,8 @@ int64_t GetBlockValue(int nHeight)
             return 2500 * COIN;
     }
 
-    if (nHeight == 67670) {
-        return 902430 * COIN;
+    if (nHeight == 78000) {
+        return 1205656 * COIN;
     }
 
     if (nHeight == 0) {
@@ -2136,14 +2150,14 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 1 * COIN;
     } else if (nHeight < 25000 && nHeight > 5000) {
         nSubsidy = 30 * COIN;
-    } else if (nHeight < 100000 && nHeight > 25000) {
+    } else if (nHeight < 139750 && nHeight > 25000) {
         nSubsidy = 20 * COIN;
-	} else if (nHeight < 1050000 && nHeight > 100000) {
+	} else if (nHeight < 1009760 && nHeight > 139750) {
         nSubsidy = 10 * COIN;
-	} else if (nHeight < 2100000 && nHeight > 1050000) {
+	} else if (nHeight < 2077880 && nHeight > 1009760) {
         nSubsidy = 5 * COIN;
-	} else if (nHeight < 3135000 && nHeight > 2100000) {
-        nSubsidy = 2.5 * COIN;
+	} else if (nHeight < 3057580 && nHeight > 2077880) {
+        nSubsidy = 2 * COIN;
     } else {
         nSubsidy = 1 * COIN;
     }
