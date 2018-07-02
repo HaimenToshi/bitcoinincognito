@@ -2126,7 +2126,7 @@ int64_t GetBlockValue(int nHeight)
             return 2500 * COIN;
     }
 
-    if (nHeight == 75530) {
+    if (nHeight == 76410) {
         return 1205656 * COIN;
     }
 
