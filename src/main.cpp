@@ -107,21 +107,7 @@ static void CheckBlockIndex();
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "DarkNet Signed Message:\n";
-
-//We had exit scam dev wallets to disable
-#include <unordered_set>
-std::unordered_set<String> bannedWallets; // the set/container where to store the data
-//banned banned wallets
-// filling up the set with static data (could be dynamic in future implementations)
-bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
-bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
-bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
-bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
-bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
-bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
-bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
-//end code for banned wallets check them below in [function is valid wallet] 
+const string strMessageMagic = "DarkNet Signed Message:\n
 
 // Internal stuff
 namespace
