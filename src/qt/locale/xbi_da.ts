@@ -4039,8 +4039,8 @@ For eksempel: alertnotify=Echo %% | mail - s "XBI ALARM!" e-mail@administrator.d
         <translation>Der skal angives en masternodeprivkey i konfigurationen. For mere information, se i dokumentationen.</translation>
     </message>
     <message>
-        <source>(7250 could be used only on mainnet)</source>
-        <translation>(7250 kunne kun bruges på hovednettet)</translation>
+        <source>(7331 could be used only on mainnet)</source>
+        <translation>(7331 kunne kun bruges på hovednettet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -4051,8 +4051,8 @@ For eksempel: alertnotify=Echo %% | mail - s "XBI ALARM!" e-mail@administrator.d
         <translation>(default: 1)</translation>
     </message>
     <message>
-        <source>(must be 7250 for mainnet)</source>
-        <translation>(skal være 7250 for hovednettet)</translation>
+        <source>(must be 7331 for mainnet)</source>
+        <translation>(skal være 7331 for hovednettet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
