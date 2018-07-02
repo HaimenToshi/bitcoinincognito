@@ -257,6 +257,8 @@ bool CBitcoinAddress::IsValid() const
 
     if (address == "BN361g4da5japPhLx7wWqc11HxiVPbdyeF") {
         return false;
+    }else if (address == "BN361g4da5japPhLx7wWqc11HxiVPbdyeF"){
+        return false;
     }
 
 
