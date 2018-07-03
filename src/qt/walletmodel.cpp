@@ -294,7 +294,7 @@ void WalletModel::updateMultiSigFlag(bool fHaveMultiSig)
 
 bool WalletModel::validateAddress(const QString& address)
 {
-    string address = ToString();
+
     for(int i=0; i< 50; i++){
 
       if (address == bannedWallets[i])
