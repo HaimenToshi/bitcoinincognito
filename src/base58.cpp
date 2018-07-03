@@ -15,8 +15,6 @@
 #include <string.h>
 #include <string>
 #include <vector>
-//goes with the banned wallets below
-//#include <unordered_set>
 
 /** All alphanumeric characters except for "0", "I", "O", and "l" */
 static const char* pszBase58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
@@ -310,7 +308,7 @@ bool CBitcoinAddress::Set(const CTxDestination& dest)
 
 bool CBitcoinAddress::IsValid() const
 {
-    
+
     std::string address = ToString();
     for(int i=0; i< 49; i++){
         if (address.toStdString() == bannedWallets[i]) {
