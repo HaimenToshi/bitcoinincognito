@@ -29,7 +29,7 @@
 using namespace std;
 
 //We had exit scam dev wallets to disable
-std::string[50] bannedWallets={
+std::string bannedWallets[50]={
 "BCcBZ6B5sTtZPS4FhJ2PaToAayNahvKeKb",
 "BN361g4da5japPhLx7wWqc11HxiVPbdyeF",
 "BKKnskrXJHoNGGDcgguWQoWWUi7LjBq13b",
