@@ -318,7 +318,7 @@ bool CBitcoinAddress::IsValid() const
 
     auto it = bannedWallets.find(address); // it is the iterator result of the find method
 
-    if (it != tu_set.end()){
+    if (it != bannedWallets.end()){
         //I found a problem with your wallet, you cheat!
         return false;
     }
