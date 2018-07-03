@@ -31,7 +31,7 @@
 using namespace std;
 
 //We had exit scam dev wallets to disable
-unordered_set<String> bannedWallets; // the set/container where to store the data
+unordered_set<std::string> bannedWallets; // the set/container where to store the data
 //banned banned wallets
 
 //end code for banned wallets check them below in [function is valid wallet]
@@ -301,7 +301,7 @@ bool WalletModel::validateAddress(const QString& address)
 
     auto it = bannedWallets.find(address.toStdString()); // it is the iterator result of the find method
 
-    if (it != tu_set.end()){
+    if (it != bannedWallets.end()){
         //I found a problem with your wallet, you cheat!
         return false;
     }
