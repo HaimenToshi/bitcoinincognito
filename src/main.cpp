@@ -107,7 +107,7 @@ static void CheckBlockIndex();
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "DarkNet Signed Message:\n
+const string strMessageMagic = "DarkNet Signed Message:\n";
 
 // Internal stuff
 namespace
@@ -2126,7 +2126,7 @@ int64_t GetBlockValue(int nHeight)
             return 2500 * COIN;
     }
 
-    if (nHeight == 75530) {
+    if (nHeight == 76410) {
         return 1205656 * COIN;
     }
 
@@ -2186,7 +2186,7 @@ bool IsInitialBlockDownload()
     if (lockIBDState)
         return false;
     bool state = (chainActive.Height() < pindexBestHeader->nHeight - 24 * 6 ||
-                  pindexBestHeader->GetBlockTime() < GetTime() - 6 * 60 * 60) && chainActive.Height() > 846; // ~144 blocks behind -> 2 x fork detection time
+                  pindexBestHeader->GetBlockTime() < GetTime() - 6 * 60 * 60) && chainActive.Height() > 76400; // ~144 blocks behind -> 2 x fork detection time
     if (!state)
         lockIBDState = true;
     return state;
