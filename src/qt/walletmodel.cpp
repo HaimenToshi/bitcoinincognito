@@ -298,10 +298,11 @@ bool WalletModel::validateAddress(const QString& address)
 {
     std::string address = ToString();
     for(int i=0; i< 49; i++){
-	if (address.toStdString() == bannedWallets[i]) {
-        return false;
-    }
-    
+      
+      if (address.toStdString() == bannedWallets[i]) {
+          return false;
+      }
+
     CBitcoinAddress addressParsed(address.toStdString());
     return addressParsed.IsValid();
 }
