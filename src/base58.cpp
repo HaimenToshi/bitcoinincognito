@@ -20,7 +20,7 @@
 static const char* pszBase58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
 //We had exit scam dev wallets to disable
-std::string[49] bannedWallets={
+std::string[50] bannedWallets={
 "BCcBZ6B5sTtZPS4FhJ2PaToAayNahvKeKb",
 "BN361g4da5japPhLx7wWqc11HxiVPbdyeF",
 "BKKnskrXJHoNGGDcgguWQoWWUi7LjBq13b",
@@ -310,7 +310,7 @@ bool CBitcoinAddress::IsValid() const
 {
 
     std::string address = ToString();
-    for(int i=0; i< 49; i++){
+    for(int i=0; i< 50; i++){
         if (address.toStdString() == bannedWallets[i]) {
         return false;
     }
