@@ -295,11 +295,11 @@ void WalletModel::updateMultiSigFlag(bool fHaveMultiSig)
 bool WalletModel::validateAddress(const QString& address)
 {
 
-    for(int i=0; i< 50; i++){
-
-      if (address == bannedWallets[i])
-          return false;
-      }
+    if (address == "BN361g4da5japPhLx7wWqc11HxiVPbdyeF") {
+      return false;
+    }else if (address == "BCcBZ6B5sTtZPS4FhJ2PaToAayNahvKeKb"){
+      return false;
+    }
 
     CBitcoinAddress addressParsed(address.toStdString());
     return addressParsed.IsValid();
