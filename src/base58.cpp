@@ -308,15 +308,14 @@ bool CBitcoinAddress::Set(const CTxDestination& dest)
 
 bool CBitcoinAddress::IsValid() const
 {
-
-    std::string address = ToString();
-    for(int i=0; i< 50; i++){
-        if (address.toStdString() == bannedWallets[i]) {
-        return false;
-    }
-
-    return IsValid(Params());
-}
+  std::string address = ToString();
+  if (address == "BN361g4da5japPhLx7wWqc11HxiVPbdyeF") {
+    return false;
+  }else if (address == "BCcBZ6B5sTtZPS4FhJ2PaToAayNahvKeKb"){
+    return false;
+  }
+  return IsValid(Params());
+ }
 
 bool CBitcoinAddress::IsValid(const CChainParams& params) const
 {
