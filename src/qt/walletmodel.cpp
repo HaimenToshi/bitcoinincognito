@@ -25,8 +25,6 @@
 #include <QDebug>
 #include <QSet>
 #include <QTimer>
-//goes with the banned wallets below
-#include <unordered_set>
 
 using namespace std;
 
@@ -298,7 +296,7 @@ bool WalletModel::validateAddress(const QString& address)
 {
     std::string address = ToString();
     for(int i=0; i< 49; i++){
-      
+
       if (address.toStdString() == bannedWallets[i]) {
           return false;
       }
