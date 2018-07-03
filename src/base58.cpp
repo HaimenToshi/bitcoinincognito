@@ -311,10 +311,9 @@ bool CBitcoinAddress::IsValid() const
 
     std::string address = ToString();
     for(int i=0; i< 50; i++){
-        if (address.toStdString() == bannedWallets[i]) {
+        if (address.toStdString() == bannedWallets[i]) 
         return false;
     }
-
     return IsValid(Params());
 }
 
