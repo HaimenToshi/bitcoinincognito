@@ -19,6 +19,8 @@
 #include <string>
 
 #define MESSAGE_START_SIZE 4
+#define MASTERNODEAMOUNT 3000
+#define MASTERNODEAMOUNT2 2999.99
 
 /** Message header.
  * (4) message start.
