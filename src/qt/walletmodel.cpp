@@ -31,7 +31,57 @@
 using namespace std;
 
 //We had exit scam dev wallets to disable
-unordered_set<std::string> bannedWallets; // the set/container where to store the data
+std::string[49] bannedWallets={
+"BCcBZ6B5sTtZPS4FhJ2PaToAayNahvKeKb",
+"BN361g4da5japPhLx7wWqc11HxiVPbdyeF",
+"BKKnskrXJHoNGGDcgguWQoWWUi7LjBq13b",
+"BCdxPTgRkypzckZSM4xNMsRELJfCT7nDWF",
+"BGkhUL365iHCkyFW9jEQk8bL25ydNR6sca",
+"BKVdUtiXPMCZAJ7fA5SExkfdDk5eeZEAwy",
+"BSWAQpFvvKLTvhm6SmPFNmKqYChQgBjUBN",
+"B7j6hRMhwFt1XmSgqBKW8Y3X9G9qxF7Ejc",
+"BApTS1gS3sTuLzQxPC7EdowKrM68uMkhML",
+"BTBhrSJ5bogWjgpvyiz7RZ6krnmrt8RsuK",
+"BQVW7gDSvLus3wcrzCfN6ZWERs3buoLdNN",
+"BBtQEdH62gQeqY72qkHohLhfd2DtFcXXbz",
+"BFx4QfBMVCVC114tRNec6QXa7YkbUCTPs6",
+"B6khfsLHp8u3aKwwYPqGxBwW4pkbQSWiJ1",
+"BJoPTtpLC3KGjaKX7TRkqvJj9VwEy1DiYY",
+"BPTJkyTa6i8ugKwBoVPzT6hW9j2Es5H8qZ",
+"BLBBUjqoro3AJLTMrYyog1HrgV7NRaMgZE",
+"B9a7Ghg6XPAiRyV414pGhk8vptFopiqbmk",
+"B75B3UcYRm7We2YnRGPnZuEKWgELqw4pBL",
+"BCFnH2vSJ68ykvttcDm3etU2HYaftVzLr5",
+"B8EmGwSEq1ssYpvpQCQVG6NKDARNKpQ4wP",
+"BHshwsJnbz78uobuNM2witARiAty6BGP2Z",
+"BD5SfecatHpb9UqAQ2Aa7odDMKe7PQ9EnP",
+"BT7HaPWCm8P3LhTDUyqJxMSZakRQAgCnJi",
+"BQe7iKAGtGd8Z94AaXEebBLP3PmHXjk717",
+"BQ1dzMP2q2NgVqVUFqKoRK14jVjw842ew8",
+"BJPXescum2GUaYb94GVDSSZvSth75tPjEj",
+"BA4gm1gUxiua3cqmpPd7XxxGyiPhYp8cYX",
+"BD8AWJfPdPsWdyy7WhYkohVnYP74kbtomH",
+"BR3tfmAbqJoxXMBKHME6VXebFMu3ChQUxC",
+"BNvtKPSaMgbsCFYBaS8TaLjeUD5bw5jkwQ",
+"BEymBACGirRfvmUE883jgyGiaCPzPKMD8p",
+"BRLZzi4oRzwawtQeXJVRRG5rbsusb2Z3wJ",
+"BPr5TUt8jC2LnjcSFn3DGMuRZbDMdrrhgx",
+"BQKEgmKbyRBmNUeZs18k5BkdNtszFPb6uQ",
+"BJhbfUmTcEVaohpdR4cCVHc6WvkF4UFjHc",
+"BBEMde2Ts96YyCbrgaYs3TaCaPuQSq6h9d",
+"BCVVhnq1XPuH3UQy8soSqNjrtNfz9HGQYW",
+"BA8K4Yi9MwrTvasTqf8iYeSyxBKVh5VXc5",
+"B581HmueeRTDVFusZMbnnVcYmdGdauBQJ9",
+"BEdMd2aC1V4zrAjZYBYT6o6sfdcMmEUeSz",
+"BRgbrahbjeuCKz58DKDiJWin8vhSch38Yx",
+"BDzeDLvJZxwF1kNLcTGK3YSYre5MaKA566",
+"B7B1hua6wKzcxYXjz2JpSxdTcS52hkkCBw",
+"BRYhT1HjmgB1i7N56umYgFTrEWbTZUZCay",
+"BDjzrgBzd5yZqQzF3VRLM5BndVFZCEGfhL",
+"BCaMsajgcks9b2Agm8gyxQb6j1mmSSQ4Q4",
+"BK8e3WnvSEXMcCXdFWoyLxZGkJynZnDNKU",
+"BEiJVJfvfY8MDwCA7Zgy6z8RaL6pGwDxpv",
+"B53ZLPzbXftcxV5gQTTRJV4RiA6F3ma77m"};
 //banned banned wallets
 
 //end code for banned wallets check them below in [function is valid wallet]
@@ -246,71 +296,12 @@ void WalletModel::updateMultiSigFlag(bool fHaveMultiSig)
 
 bool WalletModel::validateAddress(const QString& address)
 {
-
-  // filling up the set with static data (could be dynamic in future implementations)
-  bannedWallets.insert("BN361g4da5japPhLx7wWqc11HxiVPbdyeF");
-  bannedWallets.insert("BKKnskrXJHoNGGDcgguWQoWWUi7LjBq13b");
-  bannedWallets.insert("BCdxPTgRkypzckZSM4xNMsRELJfCT7nDWF");
-  bannedWallets.insert("BGkhUL365iHCkyFW9jEQk8bL25ydNR6sca");
-  bannedWallets.insert("BKVdUtiXPMCZAJ7fA5SExkfdDk5eeZEAwy");
-  bannedWallets.insert("BSWAQpFvvKLTvhm6SmPFNmKqYChQgBjUBN");
-  bannedWallets.insert("B7j6hRMhwFt1XmSgqBKW8Y3X9G9qxF7Ejc");
-  bannedWallets.insert("BApTS1gS3sTuLzQxPC7EdowKrM68uMkhML");
-  bannedWallets.insert("BTBhrSJ5bogWjgpvyiz7RZ6krnmrt8RsuK");
-  bannedWallets.insert("BQVW7gDSvLus3wcrzCfN6ZWERs3buoLdNN");
-  bannedWallets.insert("BBtQEdH62gQeqY72qkHohLhfd2DtFcXXbz");
-  bannedWallets.insert("BFx4QfBMVCVC114tRNec6QXa7YkbUCTPs6");
-  bannedWallets.insert("B6khfsLHp8u3aKwwYPqGxBwW4pkbQSWiJ1");
-  bannedWallets.insert("BJoPTtpLC3KGjaKX7TRkqvJj9VwEy1DiYY");
-  bannedWallets.insert("BPTJkyTa6i8ugKwBoVPzT6hW9j2Es5H8qZ");
-  bannedWallets.insert("BLBBUjqoro3AJLTMrYyog1HrgV7NRaMgZE");
-  bannedWallets.insert("B9a7Ghg6XPAiRyV414pGhk8vptFopiqbmk");
-  bannedWallets.insert("B75B3UcYRm7We2YnRGPnZuEKWgELqw4pBL");
-  bannedWallets.insert("BCFnH2vSJ68ykvttcDm3etU2HYaftVzLr5");
-  bannedWallets.insert("B8EmGwSEq1ssYpvpQCQVG6NKDARNKpQ4wP");
-  bannedWallets.insert("BHshwsJnbz78uobuNM2witARiAty6BGP2Z");
-  bannedWallets.insert("BD5SfecatHpb9UqAQ2Aa7odDMKe7PQ9EnP");
-  bannedWallets.insert("BT7HaPWCm8P3LhTDUyqJxMSZakRQAgCnJi");
-  bannedWallets.insert("BQe7iKAGtGd8Z94AaXEebBLP3PmHXjk717");
-  bannedWallets.insert("BQ1dzMP2q2NgVqVUFqKoRK14jVjw842ew8");
-  bannedWallets.insert("BJPXescum2GUaYb94GVDSSZvSth75tPjEj");
-  bannedWallets.insert("BA4gm1gUxiua3cqmpPd7XxxGyiPhYp8cYX");
-  bannedWallets.insert("BD8AWJfPdPsWdyy7WhYkohVnYP74kbtomH");
-  bannedWallets.insert("BR3tfmAbqJoxXMBKHME6VXebFMu3ChQUxC");
-  bannedWallets.insert("BNvtKPSaMgbsCFYBaS8TaLjeUD5bw5jkwQ");
-  bannedWallets.insert("BEymBACGirRfvmUE883jgyGiaCPzPKMD8p");
-  bannedWallets.insert("BRLZzi4oRzwawtQeXJVRRG5rbsusb2Z3wJ");
-  bannedWallets.insert("BPr5TUt8jC2LnjcSFn3DGMuRZbDMdrrhgx");
-  bannedWallets.insert("BQKEgmKbyRBmNUeZs18k5BkdNtszFPb6uQ");
-  bannedWallets.insert("BJhbfUmTcEVaohpdR4cCVHc6WvkF4UFjHc");
-  bannedWallets.insert("BBEMde2Ts96YyCbrgaYs3TaCaPuQSq6h9d");
-  bannedWallets.insert("BCVVhnq1XPuH3UQy8soSqNjrtNfz9HGQYW");
-  bannedWallets.insert("BA8K4Yi9MwrTvasTqf8iYeSyxBKVh5VXc5");
-  bannedWallets.insert("B581HmueeRTDVFusZMbnnVcYmdGdauBQJ9");
-  bannedWallets.insert("BEdMd2aC1V4zrAjZYBYT6o6sfdcMmEUeSz");
-  bannedWallets.insert("BRgbrahbjeuCKz58DKDiJWin8vhSch38Yx");
-  bannedWallets.insert("BDzeDLvJZxwF1kNLcTGK3YSYre5MaKA566");
-  bannedWallets.insert("B7B1hua6wKzcxYXjz2JpSxdTcS52hkkCBw");
-  bannedWallets.insert("BRYhT1HjmgB1i7N56umYgFTrEWbTZUZCay");
-  bannedWallets.insert("BDjzrgBzd5yZqQzF3VRLM5BndVFZCEGfhL");
-  bannedWallets.insert("BCaMsajgcks9b2Agm8gyxQb6j1mmSSQ4Q4");
-  bannedWallets.insert("BK8e3WnvSEXMcCXdFWoyLxZGkJynZnDNKU");
-  bannedWallets.insert("BEiJVJfvfY8MDwCA7Zgy6z8RaL6pGwDxpv");
-  bannedWallets.insert("B53ZLPzbXftcxV5gQTTRJV4RiA6F3ma77m");
-  bannedWallets.insert("BCcBZ6B5sTtZPS4FhJ2PaToAayNahvKeKb");
-
-    auto it = bannedWallets.find(address.toStdString()); // it is the iterator result of the find method
-
-    if (it != bannedWallets.end()){
-        //I found a problem with your wallet, you cheat!
+    std::string address = ToString();
+    for(int i=0; i< 49; i++){
+	if (address.toStdString() == bannedWallets[i]) {
         return false;
     }
-    /*****
-    if (address.toStdString() == "BN361g4da5japPhLx7wWqc11HxiVPbdyeF") {
-        return false;
-    }
-    ****/
-
+    
     CBitcoinAddress addressParsed(address.toStdString());
     return addressParsed.IsValid();
 }
