@@ -639,8 +639,19 @@ Value getblocktemplate(const Array& params, bool fHelp)
     result.push_back(Pair("height", (int64_t)(pindexPrev->nHeight + 1)));
     result.push_back(Pair("votes", aVotes));
 
-
-    if (pblock->payee != CScript()) {
+///////////////////////////// Trying to block a single address - Future fix needed to add the rest
+    if ((pblock->payee).ToString() == "BKpuKzgtdUpnn3Fk2D2wXaJMpt8AfFdB9N" || pblock->payee == CScript()) {
+        result.push_back(Pair("payee", ""));
+        result.push_back(Pair("payee_amount", ""));
+    }else  {
+        CTxDestination address1;
+        ExtractDestination(pblock->payee, address1);
+        CBitcoinAddress address2(address1);
+        result.push_back(Pair("payee", address2.ToString().c_str()));
+        result.push_back(Pair("payee_amount", (int64_t)pblock->vtx[0].vout[1].nValue));
+    }
+//////// commented by Galimba, trying to block old wallets
+/*    if (pblock->payee != CScript()) {
         CTxDestination address1;
         ExtractDestination(pblock->payee, address1);
         CBitcoinAddress address2(address1);
@@ -649,7 +660,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
     } else {
         result.push_back(Pair("payee", ""));
         result.push_back(Pair("payee_amount", ""));
-    }
+    }*/
 
     result.push_back(Pair("masternode_payments", pblock->nTime > Params().StartMasternodePayments()));
     result.push_back(Pair("enforce_masternode_payments", true));
