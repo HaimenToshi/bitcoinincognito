@@ -160,15 +160,10 @@ public:
 		
 	vSeeds.push_back(CDNSSeedData("xbi.seeds.mn.zone", "xbi.seeds.mn.zone")); // Seeder
 	vSeeds.push_back(CDNSSeedData("xbi.mnseeds.com", "xbi.mnseeds.com"));     // Seeder
-    vSeeds.push_back(CDNSSeedData("209.250.241.176", "209.250.241.176"));     // Single node address
-    vSeeds.push_back(CDNSSeedData("209.250.243.131", "209.250.243.131"));     // Single node address
-    vSeeds.push_back(CDNSSeedData("45.77.239.108", "45.77.239.108"));         // Single node address
-	vSeeds.push_back(CDNSSeedData("45.32.235.211", "45.32.235.211"));         // Single node address
-	vSeeds.push_back(CDNSSeedData("107.191.44.102", "107.191.44.102"));       // Single node address
-	vSeeds.push_back(CDNSSeedData("108.61.188.67", "108.61.188.67"));         // Single node address
-	vSeeds.push_back(CDNSSeedData("140.82.34.3", "140.82.34.3"));             // Single node address
-	vSeeds.push_back(CDNSSeedData("149.28.125.140", "149.28.125.140"));       // Single node address
-	vSeeds.push_back(CDNSSeedData("149.28.46.26", "149.28.46.26"));           // Single node address
+	vSeeds.push_back(CDNSSeedData("144.202.11.140", "144.202.11.140"));       // Single node address(Osoese)
+	vSeeds.push_back(CDNSSeedData("149.28.119.46", "149.28.119.46"));         // Single node address  "  "
+	vSeeds.push_back(CDNSSeedData("217.69.15.56", "217.69.15.56"));           // Single node address  "  "
+	vSeeds.push_back(CDNSSeedData("149.28.125.140", "149.28.125.140"));       // Single node address  "  "
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 25);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 30);
