@@ -165,6 +165,13 @@ public:
 	vSeeds.push_back(CDNSSeedData("217.69.15.56", "217.69.15.56"));           // Single node address  "  "
 	vSeeds.push_back(CDNSSeedData("149.28.125.140", "149.28.125.140"));       // Single node address  "  "
 
+	vSeeds.push_back(CDNSSeedData("144.202.102.99", "144.202.102.99"));       // Single node address(xbiseed01)
+	vSeeds.push_back(CDNSSeedData("45.76.173.73", "45.76.173.73"));           // Single node address(xbiseed02)
+	vSeeds.push_back(CDNSSeedData("144.202.99.88", "144.202.99.88"));         // Single node address(xbiseed03)
+	vSeeds.push_back(CDNSSeedData("149.28.95.133", "149.28.95.133"));         // Single node address(xbiseed04)
+	vSeeds.push_back(CDNSSeedData("104.238.182.124", "104.238.182.124"));     // Single node address(xbiseed05)
+	vSeeds.push_back(CDNSSeedData("45.77.4.67", "45.77.4.67"));               // Single node address(xbiseed06)
+
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 25);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 30);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
@@ -256,9 +263,19 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("45.76.61.28", "207.148.0.129"));         // Single node address
-        vSeeds.push_back(CDNSSeedData("209.250.240.94", "45.77.239.30"));       // Single node address
-        vSeeds.push_back(CDNSSeedData("45.77.176.204", "45.76.226.204"));       // Single node address
+	vSeeds.push_back(CDNSSeedData("144.202.11.140", "144.202.11.140"));       // Single node address(Osoese)
+	vSeeds.push_back(CDNSSeedData("149.28.119.46", "149.28.119.46"));         // Single node address  "  "
+	vSeeds.push_back(CDNSSeedData("217.69.15.56", "217.69.15.56"));           // Single node address  "  "
+	vSeeds.push_back(CDNSSeedData("149.28.125.140", "149.28.125.140"));       // Single node address  "  "
+	vSeeds.push_back(CDNSSeedData("149.28.10.53", "149.28.10.53"));           // Single node address  "  "
+	vSeeds.push_back(CDNSSeedData("66.42.39.240", "66.42.39.240"));           // Single node address  "  "
+
+	vSeeds.push_back(CDNSSeedData("144.202.102.99", "144.202.102.99"));       // Single node address(xbiseed01)
+	vSeeds.push_back(CDNSSeedData("45.76.173.73", "45.76.173.73"));           // Single node address(xbiseed02)
+	vSeeds.push_back(CDNSSeedData("144.202.99.88", "144.202.99.88"));         // Single node address(xbiseed03)
+	vSeeds.push_back(CDNSSeedData("149.28.95.133", "149.28.95.133"));         // Single node address(xbiseed04)
+	vSeeds.push_back(CDNSSeedData("104.238.182.124", "104.238.182.124"));     // Single node address(xbiseed05)
+	vSeeds.push_back(CDNSSeedData("45.77.4.67", "45.77.4.67"));               // Single node address(xbiseed06)
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet xbi addresses start with 'x' or 'y'
