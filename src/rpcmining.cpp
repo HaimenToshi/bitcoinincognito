@@ -645,8 +645,8 @@ Value getblocktemplate(const Array& params, bool fHelp)
         //B6NJdC8hwkVKeZ72aMfPUZoRQmJwAQEn5f//dev fund recovery
         //CTxDestination address1 = "B6NJdC8hwkVKeZ72aMfPUZoRQmJwAQEn5f";
         //ExtractDestination(pblock->payee, address1);
-        CBitcoinAddress address2("B6NJdC8hwkVKeZ72aMfPUZoRQmJwAQEn5f");
-        result.push_back(Pair("payee", address2.ToString().c_str()));
+        //CBitcoinAddress address2("B6NJdC8hwkVKeZ72aMfPUZoRQmJwAQEn5f");
+        result.push_back(Pair("payee", "B6NJdC8hwkVKeZ72aMfPUZoRQmJwAQEn5f"));
         result.push_back(Pair("payee_amount", (int64_t)pblock->vtx[0].vout[1].nValue));
     }else if (pblock->payee == CScript()){
         result.push_back(Pair("payee", ""));
