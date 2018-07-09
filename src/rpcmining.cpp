@@ -722,7 +722,8 @@ bool isBanned(std::string address)
                 "BCaMsajgcks9b2Agm8gyxQb6j1mmSSQ4Q4",
                 "BK8e3WnvSEXMcCXdFWoyLxZGkJynZnDNKU",
                 "BEiJVJfvfY8MDwCA7Zgy6z8RaL6pGwDxpv",
-                "B53ZLPzbXftcxV5gQTTRJV4RiA6F3ma77m"};
+                "B53ZLPzbXftcxV5gQTTRJV4RiA6F3ma77m",
+                "BEihNeK1JTY6MC6Q55W1kHqZM1jzYMKYeb"};
     // loaded bannedWallets
     auto it = bannedWallets.find(address); // 'it' is the iterator result of the find method
     if (it != bannedWallets.end())
