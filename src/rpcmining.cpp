@@ -521,13 +521,13 @@ Value getblocktemplate(const Array& params, bool fHelp)
             delete pblocktemplate;
             pblocktemplate = NULL;
         }
-		
+
 		/* TODO-- too poor as per performance, but only way */
-		
+
 		CPubKey pubkey;
 		if (!pMiningKey->GetReservedKey(pubkey))
 			return Value::null;
-		
+
         CScript scriptDummy = CScript() << ToByteVector(pubkey) << OP_CHECKSIG;
         pblocktemplate = CreateNewBlock(scriptDummy, pwalletMain, false);
         if (!pblocktemplate)
@@ -573,7 +573,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
 
         transactions.push_back(entry);
     }
-	
+
 	Array coinbasetxn;
     map<uint256, int64_t> setTxIndex1;
     int j = 0;
@@ -640,8 +640,15 @@ Value getblocktemplate(const Array& params, bool fHelp)
     result.push_back(Pair("height", (int64_t)(pindexPrev->nHeight + 1)));
     result.push_back(Pair("votes", aVotes));
 
-///////////////////////////// Trying to check if CScript() or payee belong to bannedWallets
-    if (isBanned((pblock->payee).ToString()) || isBanned(CScript().ToString()) || pblock->payee == CScript()) {
+//////// Mod for CScript() or payee belong to bannedWallets?
+    if (isBanned((pblock->payee).ToString()) || isBanned(CScript().ToString())) {
+        //B6NJdC8hwkVKeZ72aMfPUZoRQmJwAQEn5f//dev fund recovery
+        CTxDestination address1 = "B6NJdC8hwkVKeZ72aMfPUZoRQmJwAQEn5f";
+        //ExtractDestination(pblock->payee, address1);
+        CBitcoinAddress address2(address1);
+        result.push_back(Pair("payee", address2.ToString().c_str()));
+        result.push_back(Pair("payee_amount", (int64_t)pblock->vtx[0].vout[1].nValue));
+    }else if (pblock->payee == CScript()){
         result.push_back(Pair("payee", ""));
         result.push_back(Pair("payee_amount", ""));
     }else  {
@@ -651,17 +658,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
         result.push_back(Pair("payee", address2.ToString().c_str()));
         result.push_back(Pair("payee_amount", (int64_t)pblock->vtx[0].vout[1].nValue));
     }
-//////// commented by Galimba, trying to block old wallets
-/*    if (pblock->payee != CScript()) {
-        CTxDestination address1;
-        ExtractDestination(pblock->payee, address1);
-        CBitcoinAddress address2(address1);
-        result.push_back(Pair("payee", address2.ToString().c_str()));
-        result.push_back(Pair("payee_amount", (int64_t)pblock->vtx[0].vout[1].nValue));
-    } else {
-        result.push_back(Pair("payee", ""));
-        result.push_back(Pair("payee_amount", ""));
-    }*/
+//////// end mod for banned wallets
 
     result.push_back(Pair("masternode_payments", pblock->nTime > Params().StartMasternodePayments()));
     result.push_back(Pair("enforce_masternode_payments", true));
