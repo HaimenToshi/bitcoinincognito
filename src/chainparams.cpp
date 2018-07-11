@@ -99,10 +99,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xf1;
-        pchMessageStart[1] = 0xf4;
-        pchMessageStart[2] = 0xfd;
-        pchMessageStart[3] = 0xf9;
+        pchMessageStart[0] = 0xf8;
+        pchMessageStart[1] = 0xfe;
+        pchMessageStart[2] = 0x89;
+        pchMessageStart[3] = 0xa4;
         vAlertPubKey = ParseHex("0000098d3ba6ba6e7423fa5cbd6a89e0a9a5348f88d332b44a5cb1a8b7ed2c1eaa335fc8dc4f012cb8241cc0bdafd6ca70c5f5448916e4e6f511bcd746ed57dc50");
         nDefaultPort = 7332;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // XBI starting difficulty is 1 / 2^12
@@ -158,8 +158,8 @@ public:
         assert(hashGenesisBlock == uint256("0x00000ca4ce4324d11fe3a9f2abadeda5a4caad1620fdf115de8fc176adf9caf7"));
         assert(genesis.hashMerkleRoot == uint256("6d7abdfd661a3e4ee593cc158a1100e524a72ab5f065ad63b47a1ecfb82f5d4b"));
 		
-	vSeeds.push_back(CDNSSeedData("xbi.seeds.mn.zone", "xbi.seeds.mn.zone")); // Seeder
-	vSeeds.push_back(CDNSSeedData("xbi.mnseeds.com", "xbi.mnseeds.com"));     // Seeder
+	//vSeeds.push_back(CDNSSeedData("xbi.seeds.mn.zone", "xbi.seeds.mn.zone")); // Seeder
+	//vSeeds.push_back(CDNSSeedData("xbi.mnseeds.com", "xbi.mnseeds.com"));     // Seeder
 	vSeeds.push_back(CDNSSeedData("144.202.11.140", "144.202.11.140"));       // Single node address(Osoese)
 	vSeeds.push_back(CDNSSeedData("149.28.119.46", "149.28.119.46"));         // Single node address  "  "
 	vSeeds.push_back(CDNSSeedData("217.69.15.56", "217.69.15.56"));           // Single node address  "  "
