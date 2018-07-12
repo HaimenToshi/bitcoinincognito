@@ -10,21 +10,21 @@ git clone https://github.com/osoese/bitcoinincognito/
 
 3) Config parameters the code:
 ./autogen.sh
-./configure --enable-cxx --disable-shared --with-pic --prefix=<SOURCE_CODE_FOLDER>/bin/ --enable-hardening --with-gui=no
+./configure --enable-cxx --disable-shared --with-pic --prefix=$PWD/ --enable-hardening --with-gui=no
 (if building wallet, you can delete the `--with-gui=no` part up there)
 
 4) Compile the code:
 make
-make install
+make install DESTDIR=/
 
 
 4.1)Hopefully, by now you've compiled without any issues. So now, if you already had a wallet, this is when you should copy your wallet.dat inside the subfolder in ~/.XBI/...
 
-5) Start/stop the daemon
+5) Start/stop the daemon to run a regular node
 cd bin
 ./xbid -daemon
 
-./xbi-cli stop [optional] 
+./xbi-cli stop 
 
 6) Check if everything's running
 ./xbi-cli getinfo

@@ -9,13 +9,16 @@ sudo apt-get update
 sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev libboost-dev libevent-1.4-2 libdb4.8-dev libdb4.8++-dev autoconf libboost-all-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev libminiupnpc-dev git mingw-w64 g++-mingw-w64-i686 mingw-w64-i686-dev
 
 1.1) You'll need to download the source code from xbi repository 
-(NOTE TO SELF, DELETE THIS PART BY PUSHING CHANGES TO OUR MAIN GIT REPO)
+
 1.1) And you'll need to download the source-code from PIVX project https://github.com/PIVX-Project/PIVX/releases/tag/v3.1.0
 
 git clone https://github.com/osoese/bitcoinincognito.git
 wget https://github.com/PIVX-Project/PIVX/releases/tag/v3.1.0
 
-NOTE: The XBI source code does not have within it some of the files needed inside folder depends/ that the code from PIVX does, so in order to make this work, we're gonna have to "merge" the folders, copying the files that XBI does not have but PIVX does. DO NOT JUST REPLACE ALL FILES IN depends/  (!!)
+[note] I assume you know your way around copy&paste in linux. Some command line stuff may be needed here !!
+
+
+[warning!]: The XBI source code does not have within it some of the files needed inside folder depends/ that the code from PIVX does, so in order to make this work, we're gonna have to "merge" the folders, copying the files that XBI does not have but PIVX does. DO NOT JUST REPLACE ALL FILES IN depends/  (!!)
 
 
 2) Configure the mingw compiler so that Linux uses it:
@@ -45,7 +48,7 @@ cd depends/
 
 make HOST=i686-w64-mingw32
 
-6) get back to root directory:
+6) get back to the code directory:
 
 cd ..
 
@@ -56,7 +59,7 @@ CONFIG_SITE=$PWD/depends/i686-w64-mingw32/share/config.site ./configure --prefix
 
 8) Compile and install
 make
-make install DESTDIR=$PWD/bin
+make install DESTDIR=/
 
 9) you're done! You should find your windows compatible exe files inside a subfolder within bin/
 If you want to start your wallet, you should have a file named:
